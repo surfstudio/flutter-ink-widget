@@ -98,7 +98,8 @@ class InkWidget extends StatelessWidget {
     this.canRequestFocus = true,
     this.onFocusChange,
     this.autofocus = false,
-  })  : disableColor = disableColor ?? Colors.black.withOpacity(_defaultOpacity),
+  })  : disableColor =
+            disableColor ?? Colors.black.withOpacity(_defaultOpacity),
         super(key: key);
 
   @override
