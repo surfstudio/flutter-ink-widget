@@ -20,41 +20,6 @@ const _defaultOpacity = 0.5;
 /// Wrapper for InkWell
 /// Solves the problem when Material effects overlap with a child’s decoration
 class InkWidget extends StatelessWidget {
-  InkWidget({
-    required this.child,
-    Key? key,
-    this.disable = false,
-    this.disableOpacity = _defaultOpacity,
-    Color? disableColor,
-    this.disableWidget,
-    this.shape,
-    this.shapeBorder,
-    this.inkWellWidget,
-    this.onTap,
-    this.onDoubleTap,
-    this.onLongPress,
-    this.onTapDown,
-    this.onTapCancel,
-    this.onHighlightChanged,
-    this.onHover,
-    this.focusColor,
-    this.hoverColor,
-    this.highlightColor,
-    this.splashColor,
-    this.splashFactory,
-    this.radius,
-    this.borderRadius,
-    this.customBorder,
-    this.enableFeedback = true,
-    this.excludeFromSemantics = false,
-    this.focusNode,
-    this.canRequestFocus = true,
-    this.onFocusChange,
-    this.autofocus = false,
-  })  : disableColor =
-            disableColor ?? Colors.black.withOpacity(_defaultOpacity),
-        super(key: key);
-
   final Widget child;
 
   /// true - disable the widget
@@ -102,6 +67,40 @@ class InkWidget extends StatelessWidget {
   final ValueChanged<bool>? onFocusChange;
   final bool autofocus;
 
+  InkWidget({
+    required this.child,
+    Key? key,
+    this.disable = false,
+    this.disableOpacity = _defaultOpacity,
+    Color? disableColor,
+    this.disableWidget,
+    this.shape,
+    this.shapeBorder,
+    this.inkWellWidget,
+    this.onTap,
+    this.onDoubleTap,
+    this.onLongPress,
+    this.onTapDown,
+    this.onTapCancel,
+    this.onHighlightChanged,
+    this.onHover,
+    this.focusColor,
+    this.hoverColor,
+    this.highlightColor,
+    this.splashColor,
+    this.splashFactory,
+    this.radius,
+    this.borderRadius,
+    this.customBorder,
+    this.enableFeedback = true,
+    this.excludeFromSemantics = false,
+    this.focusNode,
+    this.canRequestFocus = true,
+    this.onFocusChange,
+    this.autofocus = false,
+  })  : disableColor = disableColor ?? Colors.black.withOpacity(_defaultOpacity),
+        super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -110,6 +109,7 @@ class InkWidget extends StatelessWidget {
         Positioned.fill(
           child: Material(
             type: MaterialType.transparency,
+            // ignore: avoid-returning-widgets
             child: inkWellWidget ?? _buildDefaultInkWell(),
           ),
         ),
@@ -125,7 +125,6 @@ class InkWidget extends StatelessWidget {
     );
   }
 
-  // ignore: avoid-returning-widgets
   InkWell _buildDefaultInkWell() => InkWell(
         customBorder: customBorder ?? shapeBorder,
         onTap: onTap,
