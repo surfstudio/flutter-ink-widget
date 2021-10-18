@@ -9,7 +9,7 @@
 
 This package made by [Surf](https://surf.ru/).
 
-## About
+## Description
 
 Widget library with ink effect without problems with decoration for child.
 
@@ -20,6 +20,66 @@ Add ink widget to your `pubspec.yaml` file:
 ```yaml
 dependencies:
   ink_widget: ^2.0.0
+```
+
+## Example
+
+```dart
+Center(
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: <Widget>[
+      InkWidget(
+        onTap: () {},
+        splashColor: Colors.green,
+        child: const Text('default InkWidget'),
+      ),
+      const SizedBox(height: 20),
+      InkWidget(
+        disable: true,
+        onTap: () {},
+        child: const Text('disable InkWidget'),
+      ),
+      const SizedBox(height: 20),
+      InkWidget(
+        shapeBorder: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(20)),
+        ),
+        onTap: () {},
+        child: Container(
+          padding: const EdgeInsets.all(10),
+          decoration: const BoxDecoration(
+            color: Colors.red,
+            borderRadius: BorderRadius.all(
+              Radius.circular(20),
+            ),
+          ),
+          child: const Text('Container with BoxDecoration'),
+        ),
+        ),
+        const SizedBox(height: 20),
+        InkWidget(
+          onTap: () {},
+          inkWellWidget: InkWell(onTap: () {}),
+          child: const Text('Custom InkWell (see code)'),
+        ),
+        const SizedBox(height: 20),
+        InkWidget(
+          disable: true,
+          onTap: () {},
+          disableWidget: Container(
+            height: 50,
+            color: Colors.white.withOpacity(.2),
+            child: const Align(
+              alignment: Alignment.bottomLeft,
+              child: Text('text in disableWidget'),
+            ),
+          ),
+          child: const Text('Custom disableWidget (see code)'),
+        ),
+    ],
+  ),
+),
 ```
 
 You can use both `stable` and `dev` versions of the package listed above in the badges bar.
