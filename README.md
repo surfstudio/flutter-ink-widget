@@ -1,6 +1,6 @@
 # Ink Widget
 
-[![Build Status](https://shields.io/github/workflow/status/surfstudio/SurfGear/build?logo=github&logoColor=white)](https://github.com/surfstudio/SurfGear/tree/main/packages/ink_widget)
+[![Build Status](https://shields.io/github/actions/workflow/status/surfstudio/flutter-ink-widget/workflow.yaml?logo=github&logoColor=white)](https://github.com/surfstudio/SurfGear/tree/main/packages/ink_widget)
 [![Coverage Status](https://img.shields.io/codecov/c/github/surfstudio/SurfGear?flag=ink_widget&logo=codecov&logoColor=white)](https://codecov.io/gh/surfstudio/SurfGear)
 [![Pub Version](https://img.shields.io/pub/v/ink_widget?logo=dart&logoColor=white)](https://pub.dev/packages/ink_widget)
 [![Pub Likes](https://badgen.net/pub/likes/ink_widget)](https://pub.dev/packages/ink_widget)
